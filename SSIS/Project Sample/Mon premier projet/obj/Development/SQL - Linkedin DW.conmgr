@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SQL - Linkedin DW"
+  DTS:DTSID="{FA00C25B-2F39-4105-A98D-C046019B94F3}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::SQLLinkedinDW_Password]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::SQLLinkedinDW_ServerName]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=linkedin.database.windows.net;User ID=chsauget;Initial Catalog=dw;Provider=MSOLEDBSQL.1;Persist Security Info=True;Initial File Name=&quot;&quot;;Server SPN=&quot;&quot;;Authentication=&quot;&quot;;Access Token=&quot;&quot;;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/4COPQmacU+jGDUz48zUVwAAAAACAAAAAAAQZgAAAAEAACAAAAD5aNtI+t/zaykCQuhDW25VlZpi9EGCQ8UjTteSPHdqjQAAAAAOgAAAAAIAACAAAACwxR/Ope1t3JZOz1h+XwFkpY5rysfnI24RJR7Uu1faFoAAAACT2V9UzISdy+i/V8cccpILCg0Mz/34BXO+nV6Xmqwo6RAw5vihpZE1nn/pC/jeKO0e0kAvFUaqae0Fr88StOVUjb6tCIELHCJsYgDJF60STeaaZpxC3XocU44tkRMsmW/BoQD+YOTQJqiMj6J4LXs+9JYjN/p8G3KtAWgd6+YKoUAAAAD3BCG4PUrbskp+8coq5LIi3eaCFnKu0I5PoyG6hYWAaH4AHEDRgXUHJ5eWNekffGwEx+ypf8wUsWfc6pdlBjEg</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

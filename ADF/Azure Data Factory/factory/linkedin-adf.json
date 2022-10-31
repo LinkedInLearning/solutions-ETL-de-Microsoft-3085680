@@ -1,0 +1,9 @@
+{
+	"name": "linkedin-adf",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a336c0c3-6c48-4fb3-becb-f3a279544622",
+		"tenantId": "01cad88a-b9c8-4c54-ad8d-c6920c250e4b"
+	}
+}

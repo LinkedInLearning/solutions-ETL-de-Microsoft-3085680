@@ -1,0 +1,24 @@
+{
+	"name": "TRG_Daily",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CopyAdventureWorkFile",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Day",
+				"interval": 1,
+				"startTime": "2022-10-19T00:00:00",
+				"timeZone": "Romance Standard Time"
+			}
+		}
+	}
+}

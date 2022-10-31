@@ -1,0 +1,16 @@
+{
+	"name": "SQL_PRIVE",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=False;data source=lin-win-serv;initial catalog=dw_prive;user id=chsauget",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI2MmU1ZjVhNS1iZTg2LTRlOGItOTMyNC1hZDUyN2ZlMGY0NDciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "IRSelfHosted",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

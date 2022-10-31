@@ -1,0 +1,74 @@
+# Build and deploy Azure Data Factory
+
+trigger:
+  batch: true
+  branches:
+    include:
+    # Branch that will trigger the pipeline automatically
+    - main
+  paths:
+    include:
+    # Path to the Data Factory project,
+    # changes under this path will trigger the pipeline automatically
+    - '/AzureDataFactory'
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  # Project name used in the path
+  - name: DataFatoryProjectName
+    value: MyDataFactoryProject
+  # Resource Id of the Git linked Data Factory (Dev's Data Factory in most of the cases)
+  - name: DataFactoryResourceId
+    value: '/subscriptions/xxx/resourceGroups/xxxx/providers/Microsoft.DataFactory/factories/xxxx'
+  # Parameters of the ARM templates that need to be overrided
+  # Make sure to have a space at the end of each line to prevent error
+  # You can reference stage variable (like "env" in the sample below)
+  - name: OverrideParameters
+    value: |
+        -factoryName "adf-$(env)" 
+
+stages:
+- stage: Build
+  jobs:
+  - template: job_build_datafactory.yml
+    parameters:
+      projectPath: '$(Build.Repository.LocalPath)/$(DataFatoryProjectName)'
+      dataFactoryResourceId: '$(DataFactoryResourceId)'
+
+# Sample deployment step
+# Can be duplicated for each environment
+# Warning : Do not use this pipeline to deploy on the Git linked Data Factory (Dev one in most of the cases), 
+#           otherwise the link with Azure DevOps will be removed.
+#           Use the manual Publish method (Publish button in the UI) to deploy on the Git linked Data Factory
+- stage: DeployToProd
+  # Deploy to PROD environement when build is succeeded and source branch is main
+  dependsOn: Build
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+  variables:
+  - group: keyvaultxxx
+  - name: env
+    value: prod
+  - name: SubscriptionId
+    value: xxxxxxxx
+  jobs:
+  - template: job_deploy_datafactory.yml
+    parameters:
+      # Environement name, centralized in the Environment tab of Azure Pipelines
+      environment: 'PROD'
+      # Service connection name
+      azureSubscription: 'xxxxxxx'
+      # Resource group name, can be hardcoded or stored as variable in a secret reference as $(SecretName)
+      resourceGroupName: 'rg-$(env)'
+      # Subscription Id, can be hardcoded or stored as variable in a secret reference as $(SecretName)
+      subscriptionId: $(SubscriptionId)
+      # Location of the Data Factory, North Europe by default
+      #location: 'North Europe'
+      # Data Factory name
+      factoryName: 'adf-$(env)'
+      # Start triggers after deployment
+      # Note : Triggers are stopped before deployment
+      startTriggers: true
+      # Override ARM template paramaters
+      overrideParameters: $(OverrideParameters)

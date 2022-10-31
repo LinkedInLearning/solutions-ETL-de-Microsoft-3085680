@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="FF Country"
+  DTS:DTSID="{A7A85C82-BE55-4FE8-8CE3-C789A6E88343}"
+  DTS:CreationName="FLATFILE">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:Format="Delimited"
+      DTS:LocaleID="1036"
+      DTS:Unicode="True"
+      DTS:HeaderRowDelimiter="_x000D__x000A_"
+      DTS:RowDelimiter=""
+      DTS:TextQualifier="_x003C_none_x003E_"
+      DTS:CodePage="1252"
+      DTS:ConnectionString="\\lin-win-serv\Shared\RAW\AdventureWork\CountryRegion.csv">
+      <DTS:FlatFileColumns>
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x0009_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="IsoCode"
+          DTS:DTSID="{7555D829-CCC3-40D5-A975-D27D41AF6723}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x0009_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="CountryName"
+          DTS:DTSID="{6E351DF7-1F50-4321-8ECD-17C868CE0E61}"
+          DTS:CreationName="" />
+        <DTS:FlatFileColumn
+          DTS:ColumnType="Delimited"
+          DTS:ColumnDelimiter="_x000D__x000A_"
+          DTS:MaximumWidth="50"
+          DTS:DataType="130"
+          DTS:TextQualified="True"
+          DTS:ObjectName="UpdateDate"
+          DTS:DTSID="{7C514D47-D242-441E-8E15-960523357635}"
+          DTS:CreationName="" />
+      </DTS:FlatFileColumns>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

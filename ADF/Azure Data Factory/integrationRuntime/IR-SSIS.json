@@ -1,0 +1,31 @@
+{
+	"name": "IR-SSIS",
+	"properties": {
+		"type": "Managed",
+		"typeProperties": {
+			"computeProperties": {
+				"location": "North Europe",
+				"nodeSize": "Standard_D8_v3",
+				"numberOfNodes": 2,
+				"maxParallelExecutionsPerNode": 8,
+				"vNetProperties": {
+					"vNetId": "/subscriptions/3b2b5aa8-6f16-4433-aa07-deb341acfda4/resourceGroups/Linkedin/providers/Microsoft.Network/virtualNetworks/Linkedin-vnet",
+					"subnet": "default"
+				}
+			},
+			"ssisProperties": {
+				"catalogInfo": {
+					"catalogServerEndpoint": "linkedin.database.windows.net",
+					"catalogAdminUserName": "chsauget",
+					"catalogAdminPassword": {
+						"type": "SecureString",
+						"value": "**********"
+					},
+					"catalogPricingTier": "S1"
+				},
+				"edition": "Standard",
+				"licenseType": "LicenseIncluded"
+			}
+		}
+	}
+}

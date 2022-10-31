@@ -1,0 +1,11 @@
+{
+	"name": "ADLS_Linkedin",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://linkedinlake.dfs.core.windows.net/"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/linkedservices"
+}

@@ -1,0 +1,16 @@
+{
+	"name": "DestinationDatasetTerritory",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQL_Dw",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Territory"
+		}
+	}
+}

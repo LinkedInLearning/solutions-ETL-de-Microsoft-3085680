@@ -1,0 +1,10 @@
+{
+	"name": "AKV",
+	"properties": {
+		"annotations": [],
+		"type": "AzureKeyVault",
+		"typeProperties": {
+			"baseUrl": "https://linkedin.vault.azure.net/"
+		}
+	}
+}
