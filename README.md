@@ -16,7 +16,7 @@ Les exemples utilisés lors de la formation sont disponible sur la branche **Mai
 
 ### Formateur
 
-**Nom du formateur** 
+**Charles-Henri Sauget** 
 
  Retrouvez mes autres formations sur [LinkedIn Learning][lil-URL-trainer].
 
