@@ -1,0 +1,11 @@
+TerritoryId;TerritoryName;CountryCode;Turnover
+1;Northwest;US;7887186,7882
+2;Northeast;US;2402176,8476
+3;Central;US;3072175,118
+4;Southwest;US;10510853,8739
+5;Southeast;US;2538667,2515
+6;Canada;CA;6771829,1376
+7;France;FR;4772398,3078
+8;Germany;DE;3805202,3478
+9;Australia;AU;5977814,9154
+10;United Kingdom;GB;5012905,3656
